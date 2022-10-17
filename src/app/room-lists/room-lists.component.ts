@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../model/hotel';
 import { Room } from '../model/room';
+import { HotelsService } from '../services/hotels.service';
 
 
 @Component({
@@ -19,45 +20,37 @@ hotel: any;
 // String roomType;
 // double roomCost;
 
-  rooms: Room[] =[
-    { 
-      number: 1,
-      id: 1,
-      type: 'Single',
-      cost: 5
-    },
-    { 
-      number: 2,
-      id: 1,
-      type: 'Single',
-      cost:
-       5
-    },
-    { 
-      number: 1,
-      id: 2,
-      type: 'Single',
-      cost: 5
-    },
-    {
-      number:2,
-      id:2,
-      type:'Single',
-      cost:5
-    }
-     
-  ]
+  rooms: Room[] | undefined 
 
-
-
-  constructor() { 
+  constructor(private hotelsservice: HotelsService) { 
     this.hotel = history.state.hotel;
+
+    this.hotelsservice.getAllRooms(this.hotel.id).subscribe (
+      {
+        next: (data) => {
+          console.log('receive data from service of rooms' + data)
+          this.rooms = data;
+        },
+
+        error: ()=> {
+          console.log('error');
+        },
+
+        complete: () =>{
+          console.log('complete');
+        }
+      }
+    );
   }
+
 
   ngOnInit(): void {
     console.log('launch roomlist after click')
     console.log(history.state)
     console.log(this.rooms)
+
+
   }
+ 
 
 }
