@@ -1,0 +1,42 @@
+<h2>Rooms</h2>
+<h2>{{hotel.id}}</h2>
+<h2>{{hotel.name}}</h2>
+<p>{{hotel.address}}</p>
+<p>{{hotel.phone}}</p>
+<p>{{hotel.description}}</p>
+
+<table id="customers">
+    <tr>
+      <th>Number</th>
+      <th>ID</th>
+      <th>Type</th>
+      <th>Cost</th>
+    </tr>
+  
+      <tr *ngFor="let room of rooms">
+         <td>{{room.number}}</td> 
+          <td>{{room.id}}</td>
+          <td>{{room.type}}</td>
+          <td>{{room.cost}}</td>
+        </tr>
+  </table>
+
+<!-- <table id="customers">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Room</th>
+      <th>Description</th>
+    </tr>
+  
+      <tr *ngFor="let hotel of hotels" (click)="navigate(hotel)">
+         <td>{{hotel.id}}</td> 
+          <td>{{hotel.name}}</td>
+          <td>{{hotel.address}}</td>
+          <td>{{hotel.phone}}</td>
+          <td>{{hotel.room}}</td>
+          <td>{{hotel.description}}</td>
+        </tr>
+  </table> -->

@@ -1,0 +1,22 @@
+<h1>Hotels</h1>
+
+
+<table id="customers">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Room</th>
+    <th>Description</th>
+  </tr>
+
+    <tr *ngFor="let hotel of hotels" (click)="navigate(hotel)">
+       <td>{{hotel.id}}</td> 
+        <td>{{hotel.name}}</td>
+        <td>{{hotel.address}}</td>
+        <td>{{hotel.phone}}</td>
+        <td>{{hotel.room}}</td>
+        <td>{{hotel.description}}</td>
+      </tr>
+</table>
