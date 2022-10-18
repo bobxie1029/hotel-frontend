@@ -1,8 +1,8 @@
 export interface Room{
-    number?: any;
-    id?: any;
-    type?: string;
-    cost?: number;
+    roomNo?: any;
+    hotelId?: any;
+    roomType?: string;
+   roomCost?: number;
 }
 
 // @Id

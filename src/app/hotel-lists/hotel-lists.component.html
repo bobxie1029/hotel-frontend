@@ -12,11 +12,11 @@
   </tr>
 
     <tr *ngFor="let hotel of hotels" (click)="navigate(hotel)">
-       <td>{{hotel.id}}</td> 
-        <td>{{hotel.name}}</td>
+       <td>{{hotel.hotelId}}</td> 
+        <td>{{hotel.hotelName}}</td>
         <td>{{hotel.address}}</td>
         <td>{{hotel.phone}}</td>
-        <td>{{hotel.room}}</td>
+        <td>{{hotel.roomNo}}</td>
         <td>{{hotel.description}}</td>
       </tr>
 </table>

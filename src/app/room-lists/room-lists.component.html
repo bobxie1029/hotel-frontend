@@ -1,9 +1,9 @@
-<h2>Rooms</h2>
-<h2>{{hotel.id}}</h2>
-<h2>{{hotel.name}}</h2>
-<p>{{hotel.address}}</p>
-<p>{{hotel.phone}}</p>
-<p>{{hotel.description}}</p>
+
+<h2>{{hotel.hotelName}} {{hotel.hotelId}} Rooms</h2>
+<p>{{hotel.address}} {{hotel.phone}}</p>
+
+<!-- <p>{{hotel.roomNo}}</p>> -->
+<!-- <p>{{hotel.description}}</p> -->
 
 <table id="customers">
     <tr>
@@ -14,10 +14,10 @@
     </tr>
   
       <tr *ngFor="let room of rooms">
-         <td>{{room.number}}</td> 
-          <td>{{room.id}}</td>
-          <td>{{room.type}}</td>
-          <td>{{room.cost}}</td>
+         <td>{{room.roomNo}}</td> 
+          <td>{{room.hotelId}}</td>
+          <td>{{room.roomType}}</td>
+          <td>{{room.roomCost}}</td>
         </tr>
   </table>
 

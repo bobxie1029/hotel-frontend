@@ -1,15 +1,15 @@
 export interface Hotel {
-    id?: any;
-    name?: string;
+    hotelId?: any;
+    hotelName?: string;
     address?: string;
     phone?: string;
-    room?: number;
+    roomNo?: number;
     description?: string;
 }
 //    int hotelId;
 // String hotelName;
 // String address;
-// String phone;
+// String p.hone;
 // Integer noOfRooms;
 // String description;
 // id?: any;

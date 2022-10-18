@@ -15,7 +15,15 @@ export class HotelListsComponent implements OnInit {
     private hotelsservice: HotelsService) { }
 
   ngOnInit(): void {
+    //to subscribe to an Observable we need to provide an Observer
+    //which of three methods
+    //next: when data comes, it will be called.
+    //error: in case of error, it will be called.
+    //complete: when it is completd.
 
+    //I declare three method. refer to room list component. We combined 
+    //the declaration together.
+    
     const getData =  (data: Hotel[]) =>{
       this.hotels = data;
     }
@@ -28,16 +36,19 @@ export class HotelListsComponent implements OnInit {
       console.log ('complete');
     }
 
+    //declare Observer specified the three method names.
     const listener = {
       next: getData,
       error: getErr,
       complete: getComplete
     }
+
+    //subscribe with the  observer
     this.hotelsservice.getAllHotels().subscribe(listener); 
 
   }
   navigate(hotel:Hotel): void{
-    console.log('click hotel ' + hotel.id)
+    console.log('click hotel ' + hotel.hotelId)
     this.route.navigate(['/rooms'], {state: {hotel: hotel}})
   }
 
